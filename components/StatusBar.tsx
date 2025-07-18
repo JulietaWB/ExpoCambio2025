@@ -9,10 +9,10 @@ interface TooltipProps {
 
 const StatTooltip: React.FC<TooltipProps> = ({ description }) => (
   <div 
-    className="absolute top-full mt-3 w-full min-w-[250px] max-w-sm bg-slate-700 text-slate-200 p-4 rounded-lg shadow-xl z-30 tooltip-open-down"
+    className="absolute top-full mt-3 w-full min-w-[250px] max-w-sm bg-white/90 text-green-900 p-4 rounded-lg shadow-xl z-30 border border-cyan-200"
     onClick={(e) => e.stopPropagation()} 
   >
-    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-slate-700 -mt-2"></div>
+    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-cyan-200 -mt-2"></div>
     <p className="text-sm leading-relaxed">{description}</p>
   </div>
 );
@@ -85,9 +85,8 @@ const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappine
   };
 
   return (
-    <div className="p-4 bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-lg sticky top-0 z-20">
+    <div className="p-4 bg-white/80 border-2 border-cyan-100 rounded-2xl shadow-lg sticky top-0 z-20">
       {activeTooltip && <div className="fixed inset-0 z-10" onClick={() => setActiveTooltip(null)}></div>}
-      
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-20">
         <StatBar 
           label="Economía" 
@@ -110,16 +109,15 @@ const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappine
         <StatBar 
           label="Felicidad" 
           value={peopleHappiness} 
-          icon={<HappinessIcon className="text-pink-400" />} 
+          icon={<HappinessIcon className="text-blue-400" />} 
           colorClass={getStatColor(peopleHappiness)}
           onClick={() => handleStatClick(StatType.PeopleHappiness)}
           showTooltip={activeTooltip === StatType.PeopleHappiness}
           tooltipDescription={STAT_DESCRIPTIONS.peopleHappiness}
         />
-        
-        <div className="w-full p-3 bg-slate-800 rounded-lg shadow flex flex-col items-center justify-center text-slate-300">
+        <div className="w-full p-3 bg-cyan-50 rounded-lg shadow flex flex-col items-center justify-center text-cyan-700 border border-cyan-200">
             <div className="flex items-center space-x-2">
-                <RoundsIcon className="text-indigo-400"/>
+                <RoundsIcon className="text-cyan-400"/>
                 <span className="font-medium">Ronda</span>
             </div>
             <span className="font-bold text-3xl">{rounds}</span>

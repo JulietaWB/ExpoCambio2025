@@ -33,65 +33,57 @@ export const RoundsIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-export const AdvisorAvatar: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <g clipPath="url(#clip0_303_2)">
-            <path d="M100 200C155.228 200 200 155.228 200 100C200 44.7715 155.228 0 100 0C44.7715 0 0 44.7715 0 100C0 155.228 44.7715 200 100 200Z" fill="#1E293B"/>
-            <path d="M149 186C149 158.386 127.082 136 100 136C72.9184 136 51 158.386 51 186" fill="#334155"/>
-            <path d="M129 97C129 112.987 115.987 126 100 126C84.0132 126 71 112.987 71 97C71 81.0132 84.0132 68 100 68C115.987 68 129 81.0132 129 97Z" fill="#94A3B8"/>
-            <path d="M100 162C112.15 162 122 172.283 122 185V186H78V185C78 172.283 87.85 162 100 162Z" fill="#1E293B"/>
-            <path d="M90 161L94 136H106L110 161" fill="#475569"/>
-        </g>
-        <defs>
-            <clipPath id="clip0_303_2">
-                <rect width="200" height="200" fill="white"/>
-            </clipPath>
-        </defs>
-    </svg>
+// NUEVOS AVATARES LOW POLY
+export const BusinessmanAvatar: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 40,80 80,80" fill="#7dd3fc" />
+    <polygon points="60,80 50,60 70,60" fill="#38bdf8" />
+    <polygon points="60,60 55,45 65,45" fill="#22d3ee" />
+    {/* Cabeza */}
+    <polygon points="60,45 52,35 68,35" fill="#bae6fd" />
+    {/* Corbata */}
+    <polygon points="60,80 58,70 62,70" fill="#fbbf24" />
+  </svg>
 );
 
-export const BusinessmanAvatar: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <circle cx="100" cy="100" r="100" fill="#E0E7FF"/>
-        <path d="M100 135C72.3858 135 50 157.386 50 185V200H150V185C150 157.386 127.614 135 100 135Z" fill="#4A5568"/>
-        <path d="M125 75C125 91.5685 113.807 105 100 105C86.1929 105 75 91.5685 75 75C75 58.4315 86.1929 45 100 45C113.807 45 125 58.4315 125 75Z" fill="#F4D03F"/>
-        <rect x="85" y="135" width="30" height="50" fill="#2D3748"/>
-        <path d="M85 135L100 155L115 135" fill="#4299E1"/>
-        <path d="M95 90C95 92.7614 92.7614 95 90 95C87.2386 95 85 92.7614 85 90C85 87.2386 87.2386 85 90 85C92.7614 85 95 87.2386 95 90Z" fill="#2D3748"/>
-        <path d="M115 90C115 92.7614 112.761 95 110 95C107.239 95 105 92.7614 105 90C105 87.2386 107.239 85 110 85C112.761 85 115 87.2386 115 90Z" fill="#2D3748"/>
-    </svg>
-);
 export const ActivistAvatar: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <circle cx="100" cy="100" r="100" fill="#D1FAE5"/>
-        <path d="M100 140C72.3858 140 50 162.386 50 190V200H150V190C150 162.386 127.614 140 100 140Z" fill="#6B7280"/>
-        <path d="M125 80C125 96.5685 113.807 110 100 110C86.1929 110 75 96.5685 75 80C75 63.4315 86.1929 50 100 50C113.807 50 125 63.4315 125 80Z" fill="#FBBF24"/>
-        <path d="M40 120C40 108.954 48.9543 100 60 100H140C151.046 100 160 108.954 160 120V190H40V120Z" fill="#34D399"/>
-        <path d="M90 60L70 40" stroke="#4B5563" strokeWidth="5" strokeLinecap="round"/>
-        <path d="M110 60L130 40" stroke="#4B5563" strokeWidth="5" strokeLinecap="round"/>
-    </svg>
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 35,85 85,85" fill="#bbf7d0" />
+    <polygon points="60,85 50,65 70,65" fill="#4ade80" />
+    <polygon points="60,65 55,50 65,50" fill="#22c55e" />
+    {/* Cabeza */}
+    <polygon points="60,50 52,38 68,38" fill="#a7f3d0" />
+    {/* Hoja */}
+    <polygon points="60,38 57,32 63,32" fill="#16a34a" />
+  </svg>
 );
+
 export const FamilyManAvatar: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <circle cx="100" cy="100" r="100" fill="#FEF3C7"/>
-        <path d="M100 145C72.3858 145 50 167.386 50 195V200H150V195C150 167.386 127.614 145 100 145Z" fill="#78350F"/>
-        <path d="M125 85C125 101.569 113.807 115 100 115C86.1929 115 75 101.569 75 85C75 68.4315 86.1929 55 100 55C113.807 55 125 68.4315 125 85Z" fill="#F9A825"/>
-        <rect x="70" y="145" width="60" height="40" fill="#F87171"/>
-        <path d="M90 105C90 107.761 87.7614 110 85 110C82.2386 110 80 107.761 80 105C80 102.239 82.2386 100 85 100C87.7614 100 90 102.239 90 105Z" fill="#78350F"/>
-        <path d="M120 105C120 107.761 117.761 110 115 110C112.239 110 110 107.761 110 105C110 102.239 112.239 100 115 100C117.761 100 120 102.239 120 105Z" fill="#78350F"/>
-        <path d="M90 120C95 125 105 125 110 120" stroke="#78350F" strokeWidth="5" strokeLinecap="round"/>
-    </svg>
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 42,90 78,90" fill="#fef9c3" />
+    <polygon points="60,90 50,70 70,70" fill="#fde68a" />
+    <polygon points="60,70 55,55 65,55" fill="#fbbf24" />
+    {/* Cabeza */}
+    <polygon points="60,55 52,45 68,45" fill="#fef08a" />
+    {/* Corazón */}
+    <ellipse cx="60" cy="100" rx="6" ry="3" fill="#f87171" />
+  </svg>
 );
+
 export const SmallBusinessOwnerAvatar: React.FC<{ className?: string }> = ({ className }) => (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-        <circle cx="100" cy="100" r="100" fill="#DBEAFE"/>
-        <path d="M100 130C72.3858 130 50 152.386 50 180V200H150V180C150 152.386 127.614 130 100 130Z" fill="#1E40AF"/>
-        <path d="M125 70C125 86.5685 113.807 100 100 100C86.1929 100 75 86.5685 75 70C75 53.4315 86.1929 40 100 40C113.807 40 125 53.4315 125 70Z" fill="#F59E0B"/>
-        <path d="M60 130H140V190H60V130Z" fill="#EF4444"/>
-        <rect x="80" y="150" width="40" height="20" fill="#FBBF24"/>
-        <path d="M95 85C95 87.7614 92.7614 90 90 90C87.2386 90 85 87.7614 85 85C85 82.2386 87.2386 80 90 80C92.7614 80 95 82.2386 95 85Z" fill="#1E40AF"/>
-        <path d="M115 85C115 87.7614 112.761 90 110 90C107.239 90 105 87.7614 105 85C105 82.2386 107.239 80 110 80C112.761 80 115 82.2386 115 85Z" fill="#1E40AF"/>
-    </svg>
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 45,88 75,88" fill="#dbeafe" />
+    <polygon points="60,88 52,70 68,70" fill="#60a5fa" />
+    <polygon points="60,70 56,58 64,58" fill="#2563eb" />
+    {/* Cabeza */}
+    <polygon points="60,58 54,48 66,48" fill="#bae6fd" />
+    {/* Delantal */}
+    <rect x="56" y="88" width="8" height="10" fill="#fbbf24" rx="2" />
+  </svg>
 );
 
 
