@@ -1,0 +1,183 @@
+
+[
+  {
+    "id": 1,
+    "characterName": "Ricardo 'Rick' Fortuna",
+    "title": "Construir un Mega-Complejo Tecnológico 'QuantumLeap'",
+    "description": "Propongo desarrollar un campus de alta tecnología para atraer a las startups más innovadoras. ¡Seremos el próximo Silicon Valley!",
+    "imageUrl": "futuristic city skyline",
+    "effects": {
+      "approve": { "economy": 25, "ecosystem": -15, "peopleHappiness": 5 },
+      "reject": { "economy": -5, "ecosystem": 2, "peopleHappiness": 0 }
+    },
+    "flavorText": {
+      "approve": "El complejo atrae una inversión masiva, pero la construcción genera una contaminación considerable.",
+      "reject": "Las empresas tecnológicas deciden invertir en una ciudad vecina más 'amigable para los negocios'."
+    }
+  },
+  {
+    "id": 2,
+    "characterName": "Elena Verde",
+    "title": "Crear un Corredor Ecológico Urbano",
+    "description": "¡Conectemos nuestros parques y reservas con un corredor verde! Fomentará la biodiversidad y nos dará aire más limpio.",
+    "imageUrl": "green city park",
+    "effects": {
+      "approve": { "economy": -10, "ecosystem": 25, "peopleHappiness": 15 },
+      "reject": { "economy": 0, "ecosystem": -5, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "La ciudad respira mejor y la gente disfruta de los nuevos espacios verdes, aunque algunos se quejan de los costos.",
+      "reject": "La fragmentación de los hábitats continúa, afectando a la fauna local y la calidad del aire."
+    }
+  },
+  {
+    "id": 3,
+    "characterName": "Carlos Familia",
+    "title": "Modernizar todas las Escuelas Públicas",
+    "description": "Nuestros hijos merecen lo mejor. Propongo una renovación completa de las escuelas con nueva tecnología y mejores instalaciones.",
+    "imageUrl": "modern classroom children",
+    "effects": {
+      "approve": { "economy": -15, "ecosystem": -5, "peopleHappiness": 25 },
+      "reject": { "economy": 5, "ecosystem": 0, "peopleHappiness": -10 }
+    },
+    "flavorText": {
+      "approve": "Las familias están encantadas con las nuevas escuelas, pero el presupuesto de la ciudad sufre un gran golpe.",
+      "reject": "Los padres protestan por el deterioro de las escuelas y la falta de inversión en educación."
+    }
+  },
+  {
+    "id": 4,
+    "characterName": "Laura del Barrio",
+    "title": "Lanzar un 'Mercado del Barrio' Semanal",
+    "description": "Organicemos un mercado semanal para que nuestros artesanos y agricultores locales puedan vender sus productos directamente.",
+    "imageUrl": "farmers market community",
+    "effects": {
+      "approve": { "economy": 10, "ecosystem": 5, "peopleHappiness": 15 },
+      "reject": { "economy": -5, "ecosystem": 0, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "El mercado se convierte en el corazón de la comunidad, fortaleciendo la economía local.",
+      "reject": "Los pequeños productores luchan por competir con las grandes cadenas comerciales."
+    }
+  },
+  {
+    "id": 5,
+    "characterName": "Ricardo 'Rick' Fortuna",
+    "title": "Automatizar el Sistema de Recolección de Basura",
+    "description": "Reemplacemos a los recolectores con una flota de drones y robots eficientes. ¡Reducirá costos y optimizará las rutas!",
+    "imageUrl": "futuristic robot",
+    "effects": {
+      "approve": { "economy": 15, "ecosystem": 5, "peopleHappiness": -15 },
+      "reject": { "economy": -5, "ecosystem": -5, "peopleHappiness": 5 }
+    },
+    "flavorText": {
+      "approve": "La ciudad está más limpia y los costos bajan, pero el desempleo entre los trabajadores manuales se dispara.",
+      "reject": "El sindicato de recolectores celebra, pero la ineficiencia del sistema actual sigue costando dinero a la ciudad."
+    }
+  },
+  {
+    "id": 6,
+    "characterName": "Elena Verde",
+    "title": "Prohibir los Plásticos de un Solo Uso",
+    "description": "Es hora de actuar con decisión. Propongo una prohibición total de bolsas, cubiertos y botellas de plástico de un solo uso.",
+    "imageUrl": "plastic waste ocean",
+    "effects": {
+      "approve": { "economy": -10, "ecosystem": 20, "peopleHappiness": 5 },
+      "reject": { "economy": 0, "ecosystem": -10, "peopleHappiness": 0 }
+    },
+    "flavorText": {
+      "approve": "Nuestros ríos y parques están visiblemente más limpios, aunque algunos negocios se quejan de la transición.",
+      "reject": "La contaminación por plásticos sigue siendo un problema grave y visible en toda la ciudad."
+    }
+  },
+    {
+    "id": 7,
+    "characterName": "Carlos Familia",
+    "title": "Construir más Carriles Bici Seguros",
+    "description": "Quiero que mis hijos puedan ir en bici a la escuela de forma segura. Necesitamos carriles bici protegidos en toda la ciudad.",
+    "imageUrl": "family cycling park",
+    "effects": {
+      "approve": { "economy": -5, "ecosystem": 10, "peopleHappiness": 15 },
+      "reject": { "economy": 0, "ecosystem": -5, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "El ciclismo urbano aumenta y la gente se siente más segura, pero los conductores se quejan de la pérdida de carriles.",
+      "reject": "Los accidentes de ciclistas siguen siendo una preocupación y la gente opta por el coche para trayectos cortos."
+    }
+  },
+  {
+    "id": 8,
+    "characterName": "Laura del Barrio",
+    "title": "Programa de Murales para Embellecer Barrios",
+    "description": "Invitemos a artistas locales a pintar murales en edificios grises. ¡Dará vida y carácter a nuestros barrios!",
+    "imageUrl": "street art mural",
+    "effects": {
+      "approve": { "economy": 5, "ecosystem": 0, "peopleHappiness": 10 },
+      "reject": { "economy": 0, "ecosystem": 0, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "Los murales se convierten en una atracción turística y aumentan el orgullo local.",
+      "reject": "La apariencia monótona de algunos barrios afecta al ánimo de sus residentes."
+    }
+  },
+  {
+    "id": 9,
+    "characterName": "Ricardo 'Rick' Fortuna",
+    "title": "Desregular el Sector de la Construcción",
+    "description": "Eliminemos la burocracia para acelerar la construcción de nuevos rascacielos. ¡El crecimiento no puede esperar!",
+    "imageUrl": "city construction crane",
+    "effects": {
+      "approve": { "economy": 20, "ecosystem": -20, "peopleHappiness": -10 },
+      "reject": { "economy": -5, "ecosystem": 5, "peopleHappiness": 0 }
+    },
+    "flavorText": {
+      "approve": "El boom de la construcción dispara la economía, pero la ciudad se vuelve una jungla de asfalto y ruido.",
+      "reject": "Los promotores inmobiliarios se quejan de la lentitud y se llevan sus inversiones a otra parte."
+    }
+  },
+  {
+    "id": 10,
+    "characterName": "Elena Verde",
+    "title": "Invertir en Agricultura Urbana Vertical",
+    "description": "Instalemos granjas verticales en edificios abandonados. Produciremos alimentos locales y reduciremos la huella de carbono.",
+    "imageUrl": "vertical farming",
+    "effects": {
+      "approve": { "economy": 5, "ecosystem": 15, "peopleHappiness": 10 },
+      "reject": { "economy": 0, "ecosystem": -5, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "Los ciudadanos disfrutan de alimentos frescos y locales, y se reutilizan espacios abandonados.",
+      "reject": "La dependencia de alimentos importados sigue creciendo, junto con su impacto ambiental."
+    }
+  },
+  {
+    "id": 11,
+    "characterName": "Carlos Familia",
+    "title": "Aumentar la Presencia Policial en las Calles",
+    "description": "La gente se siente insegura. Necesitamos más policías patrullando los barrios para disuadir el crimen.",
+    "imageUrl": "police officer street",
+    "effects": {
+      "approve": { "economy": -10, "ecosystem": 0, "peopleHappiness": 15 },
+      "reject": { "economy": 0, "ecosystem": 0, "peopleHappiness": -10 }
+    },
+    "flavorText": {
+      "approve": "La sensación de seguridad aumenta drásticamente, pero el costo de la fuerza policial es elevado.",
+      "reject": "Los pequeños delitos aumentan y la confianza de la gente en la seguridad de la ciudad disminuye."
+    }
+  },
+  {
+    "id": 12,
+    "characterName": "Laura del Barrio",
+    "title": "Subsidios para la Renovación de Fachadas Históricas",
+    "description": "Ayudemos a los propietarios a restaurar las fachadas de los edificios históricos para preservar el encanto de nuestra ciudad.",
+    "imageUrl": "historic building facade",
+    "effects": {
+      "approve": { "economy": 5, "ecosystem": 0, "peopleHappiness": 10 },
+      "reject": { "economy": 0, "ecosystem": -2, "peopleHappiness": -5 }
+    },
+    "flavorText": {
+      "approve": "El centro histórico recupera su esplendor, atrayendo turismo y orgullo local.",
+      "reject": "El patrimonio arquitectónico de la ciudad se deteriora lentamente, perdiendo su carácter único."
+    }
+  }
+]
