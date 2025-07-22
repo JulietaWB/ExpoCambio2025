@@ -20,6 +20,7 @@ const StatTooltip: React.FC<TooltipProps> = ({ description }) => (
 interface StatBarProps {
   label: string;
   value: number;
+  prevValue?: number;
   icon: React.ReactNode;
   colorClass: string;
   onClick: () => void;
@@ -27,25 +28,46 @@ interface StatBarProps {
   tooltipDescription: string;
 }
 
-const StatBar: React.FC<StatBarProps> = ({ label, value, icon, colorClass, onClick, showTooltip, tooltipDescription }) => {
+const StatBar: React.FC<StatBarProps> = ({ label, value, prevValue, icon, colorClass, onClick, showTooltip, tooltipDescription }) => {
   const percentage = Math.max(0, Math.min(100, (value / MAX_STAT_VALUE) * 100));
+  const [showChange, setShowChange] = React.useState(false);
+  const [change, setChange] = React.useState(0);
+
+  React.useEffect(() => {
+    if (prevValue !== undefined && prevValue !== value) {
+      setChange(value - prevValue);
+      setShowChange(true);
+      const timeout = setTimeout(() => setShowChange(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [value, prevValue]);
 
   return (
     <div className="relative w-full">
       <div 
         onClick={onClick}
-        className="w-full p-3 bg-slate-800 rounded-lg shadow hover:bg-slate-700 transition-colors duration-200 cursor-pointer"
+        className="w-full p-3 bg-white rounded-lg shadow hover:bg-slate-100 transition-colors duration-200 cursor-pointer"
         aria-haspopup="true"
         aria-expanded={showTooltip}
       >
-        <div className="flex items-center justify-between mb-1 text-slate-300">
+        <div className="flex items-center justify-between mb-1 text-slate-700">
           <div className="flex items-center space-x-2">
             {icon}
             <span className="font-medium">{label}</span>
           </div>
-          <span className="font-bold text-lg">{value}</span>
+          <span className="font-bold text-lg relative">
+            {value}
+            {showChange && change !== 0 && (
+              <span
+                className={`absolute left-1/2 -translate-x-1/2 -top-7 text-xl font-extrabold animate-float-change ${change > 0 ? 'text-green-500' : 'text-red-500'}`}
+                style={{ pointerEvents: 'none' }}
+              >
+                {change > 0 ? `+${change}` : change}
+              </span>
+            )}
+          </span>
         </div>
-        <div className="w-full bg-slate-700 rounded-full h-2.5">
+        <div className="w-full bg-slate-300 rounded-full h-2.5">
           <div 
             className={`h-2.5 rounded-full stat-bar-fill ${colorClass}`}
             style={{ width: `${percentage}%` }}
@@ -62,6 +84,9 @@ interface StatusBarProps {
   ecosystem: number;
   peopleHappiness: number;
   rounds: number;
+  prevEconomy?: number;
+  prevEcosystem?: number;
+  prevPeopleHappiness?: number;
 }
 
 const STAT_DESCRIPTIONS = {
@@ -70,7 +95,7 @@ const STAT_DESCRIPTIONS = {
   [StatType.PeopleHappiness]: 'Refleja la satisfacción, el bienestar y el estado de ánimo general de tus ciudadanos. La gente feliz es más productiva y cohesiva, pero sus demandas de servicios y ocio pueden suponer una carga para la economía y el ecosistema.'
 };
 
-const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappiness, rounds }) => {
+const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappiness, rounds, prevEconomy, prevEcosystem, prevPeopleHappiness }) => {
   const [activeTooltip, setActiveTooltip] = useState<StatType | null>(null);
 
   const handleStatClick = (stat: StatType) => {
@@ -91,6 +116,7 @@ const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappine
         <StatBar 
           label="Economía" 
           value={economy} 
+          prevValue={prevEconomy}
           icon={<EconomyIcon className="text-yellow-400" />} 
           colorClass={getStatColor(economy)}
           onClick={() => handleStatClick(StatType.Economy)}
@@ -100,6 +126,7 @@ const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappine
         <StatBar 
           label="Ecosistema" 
           value={ecosystem} 
+          prevValue={prevEcosystem}
           icon={<LeafIcon className="text-green-400" />} 
           colorClass={getStatColor(ecosystem)}
           onClick={() => handleStatClick(StatType.Ecosystem)}
@@ -109,6 +136,7 @@ const StatusBar: React.FC<StatusBarProps> = ({ economy, ecosystem, peopleHappine
         <StatBar 
           label="Felicidad" 
           value={peopleHappiness} 
+          prevValue={prevPeopleHappiness}
           icon={<HappinessIcon className="text-blue-400" />} 
           colorClass={getStatColor(peopleHappiness)}
           onClick={() => handleStatClick(StatType.PeopleHappiness)}

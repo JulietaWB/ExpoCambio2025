@@ -11,7 +11,7 @@ import TitleScreen from './components/TitleScreen';
 import IntroSlides from './components/IntroSlides';
 import EndSummaryScreen from './components/EndSummaryScreen';
 import { ResetIcon } from './components/IconComponents';
-import { generateNewProject } from './services/geminiService';
+import projectData from './data.json';
 
 type GamePhase = 'title' | 'intro' | 'playing' | 'gameOver' | 'termComplete';
 
@@ -43,39 +43,41 @@ const App: React.FC = () => {
   const [characterQueue, setCharacterQueue] = useState<Character[]>([]);
   const [gamePhase, setGamePhase] = useState<GamePhase>('title');
   const [gameOverReason, setGameOverReason] = useState<string>("");
+  const [availableProjects, setAvailableProjects] = useState([]);
+  const [prevStats, setPrevStats] = useState({
+    economy: INITIAL_STAT_VALUE,
+    ecosystem: INITIAL_STAT_VALUE,
+    peopleHappiness: INITIAL_STAT_VALUE,
+  });
+  const [showStatChange, setShowStatChange] = useState(false);
 
   const startGame = () => {
     setGamePhase('intro');
+    setShowStatChange(false); // Oculta animación al iniciar
   };
 
-  const loadNextProject = useCallback(async () => {
+  useEffect(() => {
+    // Cargar proyectos de data.json al iniciar
+    setAvailableProjects(shuffleArray(projectData));
+  }, []);
+
+  const loadNextProject = useCallback(() => {
     setGameState(prev => ({...prev, isLoadingProject: true, decisionOutcome: null, gameMessage: null }));
-
-    let currentQueue = characterQueue;
-    if (currentQueue.length === 0) {
-        currentQueue = shuffleArray(CHARACTERS);
-    }
-    
-    const nextCharacter = currentQueue[0];
-    const remainingCharacters = currentQueue.slice(1);
-    setCharacterQueue(remainingCharacters);
-
-    const projectResult = await generateNewProject(nextCharacter);
-
-    if ('error' in projectResult) {
-      console.error("Error generating project:", projectResult.error);
-      setGameOverReason(`Error al generar propuesta: ${projectResult.error}`);
+    if (availableProjects.length === 0) {
+      setGameOverReason('No hay más proyectos disponibles.');
       setGameState(prev => ({ ...prev, gameOver: true, isLoadingProject: false }));
       return;
     }
-    
+    const [nextProject, ...rest] = availableProjects;
+    setAvailableProjects(rest);
+    const nextCharacter = CHARACTERS.find(c => c.name === nextProject.characterName) || CHARACTERS[0];
     setGameState(prev => ({
       ...prev,
-      currentProject: projectResult,
+      currentProject: nextProject,
       currentCharacter: nextCharacter,
       isLoadingProject: false,
     }));
-  }, [characterQueue]);
+  }, [availableProjects]);
   
   const handleIntroComplete = useCallback(() => {
     setGamePhase('playing');
@@ -90,6 +92,13 @@ const App: React.FC = () => {
 
   const applyEffects = (effects: ProjectEffect) => {
     setGameState(prev => {
+      // Guarda los valores previos antes de aplicar el cambio
+      setPrevStats({
+        economy: prev.economy,
+        ecosystem: prev.ecosystem,
+        peopleHappiness: prev.peopleHappiness,
+      });
+      setShowStatChange(true); // Solo muestra animación después de la primera decisión
       const newEconomy = Math.min(MAX_STAT_VALUE, Math.max(0, prev.economy + effects.economy));
       const newEcosystem = Math.min(MAX_STAT_VALUE, Math.max(0, prev.ecosystem + effects.ecosystem));
       const newPeopleHappiness = Math.min(MAX_STAT_VALUE, Math.max(0, prev.peopleHappiness + effects.peopleHappiness));
@@ -161,6 +170,7 @@ const App: React.FC = () => {
     setGameState({ ...initialGameState, isLoadingProject: true });
     setCharacterQueue([]);
     setGamePhase('title');
+    setShowStatChange(false); // Resetear estado de animación al reiniciar
   };
 
   if (gamePhase === 'title') {
@@ -202,6 +212,9 @@ const App: React.FC = () => {
         ecosystem={gameState.ecosystem}
         peopleHappiness={gameState.peopleHappiness}
         rounds={gameState.rounds}
+        prevEconomy={showStatChange ? prevStats.economy : undefined}
+        prevEcosystem={showStatChange ? prevStats.ecosystem : undefined}
+        prevPeopleHappiness={showStatChange ? prevStats.peopleHappiness : undefined}
       />
       <main className="container mx-auto flex flex-col items-center justify-center flex-grow w-full max-w-4xl px-4 z-10">
         {gameState.decisionOutcome && !gameState.gameOver && (
@@ -212,13 +225,6 @@ const App: React.FC = () => {
           <div 
               className="relative w-full h-auto min-h-[350px] md:min-h-[300px] flex items-center justify-center p-4 rounded-2xl overflow-hidden bg-white/80 shadow-xl border border-green-100"
           >
-              <img
-                  src={`https://source.unsplash.com/800x600/?${encodeURIComponent(gameState.currentProject.imageUrl || 'city')}`}
-                  onError={(e) => { (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${encodeURIComponent(gameState.currentProject?.imageUrl || 'city')}/800/600` }}
-                  alt="Project background"
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out opacity-60"
-              />
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-green-100/80 via-white/60 to-transparent"></div>
               <ProjectCard 
                   project={gameState.currentProject}
                   character={gameState.currentCharacter}
