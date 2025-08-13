@@ -13,6 +13,12 @@ body {
   overflow: hidden;
 }
 
+.title-screen-bg {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
 button, .btn {
   background: linear-gradient(90deg, #4ade80 0%, #38bdf8 100%);
   color: #fff;

@@ -133,7 +133,7 @@ const App: React.FC = () => {
       decisionOutcome: decisionFlavorText,
     }));
   };
-  
+
   useEffect(() => {
     if (gameState.decisionOutcome === null) return;
 
@@ -191,7 +191,9 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="interland-bg min-h-screen flex flex-col items-center p-0 md:p-0 relative overflow-hidden">
+    <div 
+      className="interland-bg min-h-screen flex flex-col items-center p-0 md:p-0 relative overflow-hidden"
+    >
       {/* Decoración SVG estilo low poly */}
       <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
         <ellipse cx="1600" cy="200" rx="300" ry="80" fill="#B3E5FC" fillOpacity="0.5"/>
@@ -221,10 +223,10 @@ const App: React.FC = () => {
           <DecisionFeedback message={gameState.decisionOutcome} />
         )}
         {gameState.isLoadingProject && (!gameState.decisionOutcome || gameState.gameOver) && <LoadingIndicator />}
-        {!gameState.isLoadingProject && gameState.currentProject && gameState.currentCharacter && !gameState.decisionOutcome && (
-          <div 
-              className="relative w-full h-auto min-h-[350px] md:min-h-[300px] flex items-center justify-center p-4 rounded-2xl overflow-hidden bg-white/80 shadow-xl border border-green-100"
-          >
+                 {!gameState.isLoadingProject && gameState.currentProject && gameState.currentCharacter && !gameState.decisionOutcome && (
+           <div 
+               className="relative w-full h-auto min-h-[350px] md:min-h-[300px] flex items-center justify-center p-4 rounded-2xl overflow-hidden bg-white/80 shadow-xl border border-green-100"
+           >
               <ProjectCard 
                   project={gameState.currentProject}
                   character={gameState.currentCharacter}

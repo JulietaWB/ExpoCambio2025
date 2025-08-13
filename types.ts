@@ -45,5 +45,5 @@ export interface GameState {
 export enum StatType {
   Economy = 'economy',
   Ecosystem = 'ecosystem',
-  PeopleHappiness = 'peopleHappiness',
+  PeopleHappiness = 'peopleHappiness'
 }
