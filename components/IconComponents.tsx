@@ -78,6 +78,33 @@ export const SmallBusinessOwnerAvatar: React.FC<{ className?: string }> = ({ cla
   </svg>
 );
 
+export const CommunityLeaderAvatar: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 38,85 82,85" fill="#fef3c7" />
+    <polygon points="60,85 48,65 72,65" fill="#fcd34d" />
+    <polygon points="60,65 54,50 66,50" fill="#f59e0b" />
+    {/* Cabeza */}
+    <polygon points="60,50 51,38 69,38" fill="#fef08a" />
+    {/* Sombrero comunitario */}
+    <polygon points="60,38 45,30 75,30" fill="#dc2626" />
+  </svg>
+);
+
+export const EnvironmentalistAvatar: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Cuerpo */}
+    <polygon points="60,110 40,85 80,85" fill="#dcfce7" />
+    <polygon points="60,85 48,65 72,65" fill="#86efac" />
+    <polygon points="60,65 54,50 66,50" fill="#4ade80" />
+    {/* Cabeza */}
+    <polygon points="60,50 51,38 69,38" fill="#bbf7d0" />
+    {/* Corona de flores */}
+    <polygon points="60,38 45,32 75,32" fill="#fbbf24" />
+    <polygon points="60,32 50,28 70,28" fill="#ef4444" />
+  </svg>
+);
+
 export const CityscapeIllustration: React.FC<{ className?: string }> = ({ className }) => (
     <svg viewBox="0 0 600 200" preserveAspectRatio="none" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
         <path d="M0 200H600V150H580V100H560V150H540V120H520V150H500V80H480V150H450V110H430V150H400V90H380V150H360V130H340V150H300V60H280V150H250V100H230V150H200V120H180V150H150V70H130V150H100V110H80V150H50V130H30V150H0V200Z" />

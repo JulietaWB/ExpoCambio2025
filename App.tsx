@@ -4,7 +4,6 @@ import { GameState, ProjectEffect, Character } from './types';
 import { INITIAL_STAT_VALUE, MAX_STAT_VALUE, MIN_STAT_VALUE_FOR_GAME_OVER, CHARACTERS, MAX_ROUNDS } from './constants';
 import StatusBar from './components/StatusBar';
 import ProjectCard from './components/ProjectCard';
-import GameOverScreen from './components/GameOverScreen';
 import LoadingIndicator from './components/LoadingIndicator';
 import DecisionFeedback from './components/DecisionFeedback';
 import TitleScreen from './components/TitleScreen';
@@ -113,7 +112,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (gameState.gameOver) {
-        setGamePhase('gameOver');
+        setGamePhase('termComplete');
     }
   }, [gameState.gameOver]);
 
@@ -182,12 +181,12 @@ const App: React.FC = () => {
   }
   
   if (gamePhase === 'termComplete') {
-    return <EndSummaryScreen onRestart={restartGame} {...gameState} />;
-  }
-
-  if (gamePhase === 'gameOver') {
-    const message = gameOverReason || "Tu mandato ha terminado.";
-    return <GameOverScreen rounds={gameState.rounds} onRestart={restartGame} message={message} />;
+    return <EndSummaryScreen 
+      onRestart={restartGame} 
+      {...gameState} 
+      isGameOver={gameState.gameOver}
+      gameOverReason={gameOverReason}
+    />;
   }
 
   return (
