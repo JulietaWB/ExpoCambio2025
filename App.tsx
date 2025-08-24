@@ -151,16 +151,22 @@ const App: React.FC = () => {
 
     // Check for end of term (6 rounds completed)
     if (gameState.rounds >= MAX_ROUNDS) {
+      // ⏱️ TIEMPO DEL LOADING INDICATOR: Cambiar este valor (7500ms = 7.5 segundos)
+      // Para hacerlo más rápido: reducir el número (ej: 3000 = 3 segundos)
+      // Para hacerlo más lento: aumentar el número (ej: 10000 = 10 segundos)
       setTimeout(() => {
         setGamePhase('termComplete');
-      }, 2500);
+      }, 3500);
       return;
     }
 
     // If game continues, load next project
+    // ⏱️ TIEMPO DEL LOADING INDICATOR: Cambiar este valor (7500ms = 7.5 segundos)
+    // Para hacerlo más rápido: reducir el número (ej: 3000 = 3 segundos)
+    // Para hacerlo más lento: aumentar el número (ej: 10000 = 10 segundos)
     setTimeout(() => {
       loadNextProject();
-    }, 2500);
+    }, 3500);
 
   }, [gameState.decisionOutcome, gameState.economy, gameState.ecosystem, gameState.peopleHappiness, gameState.rounds, loadNextProject]);
 
