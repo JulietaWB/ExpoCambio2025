@@ -239,7 +239,7 @@ const App: React.FC = () => {
          )}
       </main>
       <footer className="text-center py-4 text-green-800 text-sm z-10">
-        <p>El Dilema del Alcalde &copy; {new Date().getFullYear()}. ¡Gobierna con sabiduría!</p>
+        <p>El Dilema del Alcalde &copy; {new Date().getFullYear()}. ORT - ExpoCambio 2025</p>
       </footer>
     </div>
   );
