@@ -1,5 +1,3 @@
-
-
 [
   {
     "id": 13,
@@ -8,8 +6,8 @@
     "description": "Tenemos planes para ampliar nuestro centro comercial. Esto generará empleos, pero requerirá talar parte del parque municipal.",
     "imageUrl": "shopping mall park",
     "effects": {
-      "approve": { "economy": 20, "ecosystem": -20, "peopleHappiness": 5 },
-      "reject": { "economy": -5, "ecosystem": 5, "peopleHappiness": 0 }
+      "approve": { "economy": 15, "ecosystem": -15, "peopleHappiness": 15 },
+      "reject": { "economy": -10, "ecosystem": 10, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'Excelente, ¡más ventas y más empleo para todos! Aunque bueno… el parque ya no está.'",
@@ -23,8 +21,8 @@
     "description": "Si damos subsidios a las fábricas, podrán producir más y generar empleo. Sí, contaminarán un poco más, pero ayudar a la economía es ayudar a la gente.",
     "imageUrl": "factory industrial area",
     "effects": {
-      "approve": { "economy": 20, "ecosystem": -15, "peopleHappiness": 10 },
-      "reject": { "economy": -10, "ecosystem": 5, "peopleHappiness": 0 }
+      "approve": { "economy": 20, "ecosystem": -20, "peopleHappiness": 10 },
+      "reject": { "economy": -20, "ecosystem": 20, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'Perfecto, ¡a producir a toda máquina! La ciudad va a prosperar.'",
@@ -38,8 +36,8 @@
     "description": "Una nueva autopista agilizará el transporte de mercancías y conectará zonas clave, aunque pasará por un área natural.",
     "imageUrl": "highway forest",
     "effects": {
-      "approve": { "economy": 25, "ecosystem": -25, "peopleHappiness": -5 },
-      "reject": { "economy": -5, "ecosystem": 5, "peopleHappiness": 0 }
+      "approve": { "economy": 15, "ecosystem": -15, "peopleHappiness": 20 },
+      "reject": { "economy": -5, "ecosystem": 10, "peopleHappiness": -15 }
     },
     "flavorText": {
       "approve": "'¡Excelente! Ahora el transporte será rapidísimo.'",
@@ -53,8 +51,8 @@
     "description": "Planeamos construir un complejo de departamentos de lujo frente al río. Será un imán para inversionistas, aunque reducirá el acceso público a la costa.",
     "imageUrl": "luxury river apartments",
     "effects": {
-      "approve": { "economy": 15, "ecosystem": -10, "peopleHappiness": -15 },
-      "reject": { "economy": -5, "ecosystem": 5, "peopleHappiness": 5 }
+      "approve": { "economy": 15, "ecosystem": -10, "peopleHappiness": -10 },
+      "reject": { "economy": -10, "ecosystem": 5, "peopleHappiness": 5 }
     },
     "flavorText": {
       "approve": "'Excelente, ¡la zona se revaloriza! Aunque ahora es para pocos privilegiados.'",
@@ -68,8 +66,8 @@
     "description": "Si construimos estacionamientos multinivel en el centro, más gente podrá venir en auto a comprar. Claro que eso aumentará el tráfico.",
     "imageUrl": "parking garage city",
     "effects": {
-      "approve": { "economy": 15, "ecosystem": -10, "peopleHappiness": 5 },
-      "reject": { "economy": -5, "ecosystem": 10, "peopleHappiness": 0 }
+      "approve": { "economy": 15, "ecosystem": -10, "peopleHappiness": 15 },
+      "reject": { "economy": -15, "ecosystem": 10, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'Perfecto, más clientes, más ventas.'",
@@ -83,8 +81,8 @@
     "description": "Podemos construir una planta incineradora para reducir la basura. Es eficiente, pero emitirá gases contaminantes y tóxicos.",
     "imageUrl": "waste incinerator",
     "effects": {
-      "approve": { "economy": 10, "ecosystem": -20, "peopleHappiness": -15 },
-      "reject": { "economy": -5, "ecosystem": 5, "peopleHappiness": 0 }
+      "approve": { "economy": 10, "ecosystem": -20, "peopleHappiness": -10 },
+      "reject": { "economy": -10, "ecosystem": 20, "peopleHappiness": 0 }
     },
     "flavorText": {
       "approve": "'Eficiencia ante todo, ¡problema de la basura resuelto!'",
@@ -99,7 +97,7 @@
     "imageUrl": "neighborhood park",
     "effects": {
       "approve": { "economy": -15, "ecosystem": 10, "peopleHappiness": 20 },
-      "reject": { "economy": 0, "ecosystem": -10, "peopleHappiness": -20 }
+      "reject": { "economy": 15, "ecosystem": -10, "peopleHappiness": -15 }
     },
     "flavorText": {
       "approve": "'¡Gracias! Ahora tenemos donde tomar mate y ver jugar a los chicos.'",
@@ -113,8 +111,8 @@
     "description": "Queremos bicisendas seguras para que los chicos y adultos puedan moverse sin auto. Esto ayudaría a reducir el tráfico y la contaminación.",
     "imageUrl": "bike lane city",
     "effects": {
-      "approve": { "economy": -5, "ecosystem": 15, "peopleHappiness": 20 },
-      "reject": { "economy": 5, "ecosystem": -10, "peopleHappiness": -15 }
+      "approve": { "economy": -10, "ecosystem": 15, "peopleHappiness": 15 },
+      "reject": { "economy": 10, "ecosystem": -15, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'¡Genial! Ahora podemos pedalear sin miedo.'",
@@ -128,8 +126,8 @@
     "description": "Cada verano hay más y peores olas de calor. Necesitamos centros verdes con plantas y sombra para proteger a los niños y adultos mayores.",
     "imageUrl": "urban heat shelter",
     "effects": {
-      "approve": { "economy": -15, "ecosystem": 20, "peopleHappiness": 20 },
-      "reject": { "economy": 0, "ecosystem": -15, "peopleHappiness": -15 }
+      "approve": { "economy": -15, "ecosystem": 15, "peopleHappiness": 10 },
+      "reject": { "economy": 15, "ecosystem": -15, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'¡Qué alivio! Ahora podremos pasar el verano con menos riesgo.'",
@@ -143,8 +141,8 @@
     "description": "Los colectivos están viejos y contaminan mucho. Podríamos reemplazarlos por unos eléctricos, aunque costaría bastante.",
     "imageUrl": "electric bus fleet",
     "effects": {
-      "approve": { "economy": -25, "ecosystem": 20, "peopleHappiness": 25 },
-      "reject": { "economy": 10, "ecosystem": -15, "peopleHappiness": -20 }
+      "approve": { "economy": -20, "ecosystem": 20, "peopleHappiness": 20 },
+      "reject": { "economy": 20, "ecosystem": -15, "peopleHappiness": -15 }
     },
     "flavorText": {
       "approve": "'¡Excelente! Menos ruido, menos humo y más comodidad.'",
@@ -158,8 +156,8 @@
     "description": "En las ciudades suele hacer más calor por el cemento y pavimento. Si plantamos más árboles tendremos sombra, aire más limpio y menos temperatura.",
     "imageUrl": "tree lined street",
     "effects": {
-      "approve": { "economy": -5, "ecosystem": 10, "peopleHappiness": 15 },
-      "reject": { "economy": 0, "ecosystem": -10, "peopleHappiness": -10 }
+      "approve": { "economy": -5, "ecosystem": 15, "peopleHappiness": 10 },
+      "reject": { "economy": 5, "ecosystem": -10, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'¡Buenísimo! Ahora las calles son más frescas y coloridas.'",
@@ -174,7 +172,7 @@
     "imageUrl": "urban drainage system",
     "effects": {
       "approve": { "economy": -20, "ecosystem": 10, "peopleHappiness": 15 },
-      "reject": { "economy": 0, "ecosystem": -10, "peopleHappiness": -10 }
+      "reject": { "economy": 10, "ecosystem": -10, "peopleHappiness": -10 }
     },
     "flavorText": {
       "approve": "'¡Genial! Menos agua en las calles y más espacios verdes.'",
@@ -189,7 +187,7 @@
     "imageUrl": "urban wetlands restoration",
     "effects": {
       "approve": { "economy": -20, "ecosystem": 20, "peopleHappiness": 10 },
-      "reject": { "economy": 0, "ecosystem": -15, "peopleHappiness": -5 }
+      "reject": { "economy": 10, "ecosystem": -15, "peopleHappiness": -5 }
     },
     "flavorText": {
       "approve": "'¡La naturaleza vuelve y nos protege!'",
